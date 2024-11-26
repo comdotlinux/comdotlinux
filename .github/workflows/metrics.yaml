@@ -46,6 +46,7 @@ jobs:
           base: header
           config_timezone: ${{ secrets.USER_TIMEZONE }}
   lines:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - uses: lowlighter/metrics@latest
@@ -57,6 +58,7 @@ jobs:
           plugin_lines: yes
 
   acti_comm:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - uses: lowlighter/metrics@latest
@@ -74,6 +76,7 @@ jobs:
           config_timezone: ${{ secrets.USER_TIMEZONE }}
 
   iso_calender:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - uses: lowlighter/metrics@latest
@@ -93,6 +96,7 @@ jobs:
           plugin_isocalendar_duration: half-year
 
   habits:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - uses: lowlighter/metrics@latest
@@ -111,6 +115,7 @@ jobs:
           plugin_habits_trim: yes       # Trim unused hours on daily chart
 
   issue_pr_lang:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - uses: lowlighter/metrics@latest
@@ -131,6 +136,7 @@ jobs:
 
 
   repositories:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - uses: lowlighter/metrics@latest
