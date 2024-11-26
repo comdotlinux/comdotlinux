@@ -29,6 +29,7 @@ jobs:
           plugin_achievements_limit: 0          # Display all unlocked achievements (no limit)
 
   github-metrics:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - uses: lowlighter/metrics@latest
