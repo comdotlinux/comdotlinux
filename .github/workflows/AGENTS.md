@@ -26,7 +26,7 @@ One workflow, `metrics.yaml`, regenerates every SVG in the repo root using `lowl
 | `repositories` | `repositories.svg` | `base: repositories` |
 
 ## Triggers
-- `schedule`: `59 23 */10 * *` (UTC) → 1st/11th/21st/31st of each month, approx. every 10 days.
+- `schedule`: `59 23 1,11,21 * *` (UTC) → 3 runs/month, approx. every 10 days.
 - `workflow_dispatch`: manual.
 - `push` to `main`, `paths-ignore: .github/workflows/**`.
 
