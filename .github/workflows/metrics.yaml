@@ -4,19 +4,18 @@ on:
   schedule: [{cron: "59 23 * * *"}]
   # Lines below let you run workflow manually and on each commit (optional)
   workflow_dispatch:
-  push: 
-    branches: 
-      - "main"
-    paths: 
-      - '!.github/workflows/**'
+  push:
+    branches: ["main"]
+    paths-ignore: [".github/workflows/**"]
 
 jobs:
 
   achievements:
-    permissions: write-all
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
-      - uses: lowlighter/metrics@latest
+      - uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # v3.34
         with:
           filename: achievements.svg
           token: ${{ secrets.METRICS_SECRET }}
@@ -30,10 +29,11 @@ jobs:
           plugin_achievements_limit: 0          # Display all unlocked achievements (no limit)
 
   github-metrics:
-    permissions: write-all
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
-      - uses: lowlighter/metrics@latest
+      - uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # v3.34
         with:
           filename: header.svg
           # You'll need to setup a personal token in your secrets.
@@ -47,10 +47,11 @@ jobs:
           base: header
           config_timezone: ${{ secrets.USER_TIMEZONE }}
   lines:
-    permissions: write-all
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
-      - uses: lowlighter/metrics@latest
+      - uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # v3.34
         with:
           filename: lines-of-code.svg
           token: ${{ secrets.METRICS_SECRET }}
@@ -59,10 +60,11 @@ jobs:
           plugin_lines: yes
 
   acti_comm:
-    permissions: write-all
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
-      - uses: lowlighter/metrics@latest
+      - uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # v3.34
         with:
           filename: acti_comm.svg
           # You'll need to setup a personal token in your secrets.
@@ -77,10 +79,11 @@ jobs:
           config_timezone: ${{ secrets.USER_TIMEZONE }}
 
   iso_calender:
-    permissions: write-all
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
-      - uses: lowlighter/metrics@latest
+      - uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # v3.34
         with:
           filename: iso_calender.svg
           # You'll need to setup a personal token in your secrets.
@@ -97,10 +100,11 @@ jobs:
           plugin_isocalendar_duration: half-year
 
   habits:
-    permissions: write-all
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
-      - uses: lowlighter/metrics@latest
+      - uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # v3.34
         with:
           filename: github-habits.svg
           token: ${{ secrets.METRICS_SECRET }}
@@ -116,10 +120,11 @@ jobs:
           plugin_habits_trim: yes       # Trim unused hours on daily chart
 
   issue_pr_lang:
-    permissions: write-all
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
-      - uses: lowlighter/metrics@latest
+      - uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # v3.34
         with:
           filename: issue_pr_lang.svg
           # You'll need to setup a personal token in your secrets.
@@ -137,10 +142,11 @@ jobs:
 
 
   repositories:
-    permissions: write-all
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
-      - uses: lowlighter/metrics@latest
+      - uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # v3.34
         with:
           filename: repositories.svg
           # You'll need to setup a personal token in your secrets.
