@@ -1,7 +1,7 @@
 name: Metrics
 on:
-  # Schedule updates (every day)
-  schedule: [{cron: "59 23 * * *"}]
+  # ponytail: */10 on day-of-month = 1st/11th/21st/31st, ~every 10 days; cron cannot do exact 10-day intervals
+  schedule: [{cron: "59 23 */10 * *"}]
   # Lines below let you run workflow manually and on each commit (optional)
   workflow_dispatch:
   push:
